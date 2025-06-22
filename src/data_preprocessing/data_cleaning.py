@@ -59,7 +59,7 @@ class DataCleaning:
         if self.print_log:
             print(f"[INFO] Removed columns: {columns}")
 
-    def partition_data(self, data_size: float = 0.05):
+    def partition_data(self, data_size: float = 0.2):
         """
         Partitions the DataFrame to a specified fraction of its original size.
         This method randomly samples a fraction of the DataFrame to reduce its size.
@@ -250,7 +250,7 @@ def test_data_cleaning(
 
     cleaner = DataCleaning(df, text_column, summary_column, overwrite=False, print_log=True)
     cleaner.remove_unwanted_columns(columns=['id'])
-    cleaner.partition_data(data_size=0.15)
+    cleaner.partition_data(data_size=0.2)
 
     if all_cleaning:
         cleaner.apply_clean_text()
@@ -276,7 +276,7 @@ def main():
 
     cleaned_data = test_data_cleaning(path, text_column, summary_column, text_length, all_cleaning)
 
-    save_to_file(save_file_name, cleaned_data, True)
+    save_to_file(save_dir='processed', save_file_name=save_file_name, df=cleaned_data, print_log=True)
 
     print(cleaned_data.head())
     print("[INFO] Data cleaning process completed successfully.")
