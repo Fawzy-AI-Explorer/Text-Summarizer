@@ -54,12 +54,13 @@ class OpenAIModel:
 def test_openai_model():
     """Test OpenAI Model."""
     print("\n[INFO] Testing OpenAI Model...")
-    # model = OpenAIModel(
-    #     temp=0.2,
-    #     model=os.getenv("OPENAI_MODEL_ID"),
-    #     url=os.getenv("BASE_URL"),
-    #     key=os.environ.get('OPENROUTER_API_KEY')
-    # )
+
+    model = OpenAIModel(
+        temp=0.2,
+        model=os.getenv("OPENAI_MODEL_ID"),
+        url=os.getenv("BASE_URL"),
+        key=os.environ.get('OPENROUTER_API_KEY')
+    )
     with open(
         file=r'src/evaluation/text.json',
         mode='r',
@@ -71,10 +72,13 @@ def test_openai_model():
     print(f"\n[INFO] Text to be summarized:\n{text}\n")
     message = text_summarization.get_message(text)
     print(f"message: {message}\n")
-    # print(f"\n[INFO] Message to be sent:\n{json.dumps(message, indent=2)}")
-    # response = model.get_response(message)
+    print(f"\n[INFO] Message to be sent:\n{json.dumps(message, indent=2)}")
+    response = model.get_response(message)
 
-    # print(f"\n[RESULT]:\n{response.choices[0].message.content}")
+    if response.choices and response.choices[0].message.content:
+        print(f"\n[RESULT]:\n{response.choices[0].message.content}")
+    else:
+        print("[ERROR] No content in response.")
 
 
 
