@@ -9,7 +9,7 @@ COMPETITION_FILE="train.csv"
 dataset_dir="Data/raw"
 competition_dir="Data/competition"
 
-# Create directories if they don't exist
+# Create directories 
 mkdir -p "$dataset_dir"
 
 echo "Checking Kaggle credentials..."
@@ -21,7 +21,7 @@ fi
 
 chmod 600 ~/.kaggle/kaggle.json
 
-# ====== DOWNLOAD DATASET ======
+# ====== DOWNLOAD DATASET =======
 echo "Downloading Dataset from: $DATASET_NAME"
 kaggle datasets download -d "$DATASET_NAME" -p "$dataset_dir" --unzip
 
