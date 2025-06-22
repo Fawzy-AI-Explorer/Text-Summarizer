@@ -10,7 +10,7 @@ class TextSummarization(BaseModel):
 
     summarized_text: str = Field(
         ...,
-        description="The text to be summarized.",
+        description="summarized text.",
         max_length=300,
         min_length=10
     )
