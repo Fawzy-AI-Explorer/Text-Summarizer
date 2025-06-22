@@ -57,7 +57,7 @@ def test_openai_model():
 
     model = OpenAIModel(
         temp=0.2,
-        model=os.getenv("OPENAI_MODEL_ID"),
+        model=os.getenv("MODEL_ID"),
         url=os.getenv("BASE_URL"),
         key=os.environ.get('OPENROUTER_API_KEY')
     )
