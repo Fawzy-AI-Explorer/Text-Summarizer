@@ -53,7 +53,8 @@ class DataPreparing:
                 "task" : "summarized the given text and save the response as JSON",
                 "output_scheme": json.dumps(scheme, ensure_ascii=False, indent=2),
                 "text": line['text'],
-                "summary": line['summary']
+                "response": {"summarized_text":
+                             line['summary']}
             }
 
             data_s.append(item)

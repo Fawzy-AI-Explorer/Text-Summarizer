@@ -133,7 +133,7 @@ class DataFormatting:
                 "input": "",
                 "output": "\n".join([
                     "```json",
-                    json.dumps(rec["summary"], ensure_ascii=False, default=str), # type: ignore
+                    json.dumps(rec["response"], ensure_ascii=False, default=str), # type: ignore
                     "```"
                 ]),
                 "history": ""
@@ -152,6 +152,7 @@ def test_data_formatting():
     data = formatter.load_data()
     print(f"[INFO] Loaded {len(data)} records from {formatter.data_path}")
     formatter.format_data(data)
+
     formatter.save_to_file()
 
 
