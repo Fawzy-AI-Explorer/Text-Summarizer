@@ -1,0 +1,1 @@
+cd LLaMA-Factory/ && llamafactory-cli train examples/train_lora/summary_finetune.yaml
