@@ -89,3 +89,52 @@ if __name__ == "__main__":
 
 
 # to run this : python -m src.data_preprocessing.data_preparing
+
+
+# X3 , [n1 :X1, n2 :X2]
+
+
+# X3 , [n1 :X1, n2 :X2]
+
+'''
+x1 => []
+x2 => 1
+x3 => 9
+x4
+x5
+x6
+x7
+x8
+x9 => []
+
+
+'''
+
+'''
+x1 => 1
+x1 => 1
+x3 => 9
+x4
+x5
+x6
+x7
+x8
+x9
+
+
+'''
+
+
+'''
+x1 => 1
+x1 => 1
+x3 => 9
+x4
+x5
+x6
+x7
+x8
+x9
+
+
+'''
