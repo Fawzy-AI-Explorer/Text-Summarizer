@@ -72,10 +72,10 @@ class DataFormatting:
         save_json_file(path, self.llm_finetuning_data)
 
         print("\n[INFO] Saving to training and validation directories...")
-        train_sample_sz = int(0.8 * len(self.llm_finetuning_data))
+        # train_sample_sz = int(0.55 * len(self.llm_finetuning_data))
 
-        train_ds = self.llm_finetuning_data[:train_sample_sz]
-        eval_ds = self.llm_finetuning_data[train_sample_sz:]
+        train_ds = self.llm_finetuning_data[:3000]
+        eval_ds = self.llm_finetuning_data[3000:3500]
         print(f"[INFO] Training dataset size: {len(train_ds)}", type(train_ds))
         print(f"[INFO] Validation dataset size: {len(eval_ds)}", type(eval_ds))
 
