@@ -7,6 +7,8 @@ import os
 import torch
 import json
 from transformers import AutoModelForCausalLM, AutoTokenizer
+# from src.pydantic_models.textsummarization import TextSummarization
+from src.pydantic_models.text_summarization import TextSummarization
 from dotenv import load_dotenv
 from src.tasks import text_summarization
 load_dotenv(dotenv_path=".env", override=True, verbose=True)
@@ -257,7 +259,8 @@ def test_model():
 
     message = text_summarization.get_message(text)
     response = model.create(message)
-    print(f"\n[RESULT]:\n{response}")
+    result = TextSummarization(summarized_text=response)
+    print(f"\n[RESULT]:\n{result.model_dump()}")
 
 def main():
     """main function to run the test_model function."""
