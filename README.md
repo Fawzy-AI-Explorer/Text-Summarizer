@@ -6,7 +6,6 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Fawzy-AI-Explorer/TextSummarization/graphs/commit-activity) 
 [![Documentation](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://github.com/Fawzy-AI-Explorer/TextSummarization) 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Fawzy-AI-Explorer/TextSummarization) 
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org) 
 [![API](https://img.shields.io/badge/API-Ready-brightgreen.svg)](https://8000-dep-01jyhhr1e9bycjzqzt1xmt69cr-d.cloudspaces.litng.ai/)
 
