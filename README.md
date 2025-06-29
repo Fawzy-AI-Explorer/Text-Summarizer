@@ -1,56 +1,71 @@
-# Text Summarization 📝 
+# 📝 AI Text Summarization System 
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/) 
-[![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-yellow)](https://huggingface.co/) 
+[![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-orange)](https://huggingface.co/) 
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Fawzy-AI-Explorer/TextSummarization/graphs/commit-activity) 
-[![Documentation](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://github.com/Fawzy-AI-Explorer/TextSummarization) 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) 
-[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org) 
-[![API](https://img.shields.io/badge/API-Ready-brightgreen.svg)](https://8000-dep-01jyhhr1e9bycjzqzt1xmt69cr-d.cloudspaces.litng.ai/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-> AI-powered text summarization system using fine-tuned transformer models
+> Transform lengthy documents into concise summaries with AI-powered intelligence
 
-##  Introduction
+## Introduction
 
-Text Summarization is an AI-powered tool designed to condense lengthy text content into concise summaries while preserving essential information and key insights. The system uses fine-tuned language models to improve readability and information extraction, making it perfect for researchers, content creators, and professionals who need to quickly grasp the main points of large documents.
+Welcome to our **AI Text Summarization System**! This project harnesses the power of fine-tuned transformer models to automatically condense lengthy text content into clear, concise summaries while preserving all the essential information.
 
-The project leverages the efficient Qwen2.5-0.5B model fine-tuned on summarization datasets, providing high-quality summarization capabilities with lower computational requirements compared to larger models while maintaining excellent performance.
+Perfect for:
+- **Researchers** processing academic papers
+- **Content creators** summarizing articles
+- **Professionals** digesting reports and documents
+- **Students** studying large volumes of text
+
+Built with the efficient **Qwen2.5-0.5B** model, our system delivers high-quality summarization with minimal computational overhead – making AI-powered text processing accessible to everyone!
 
 ## Features
 
-- 🤖 **Pre-trained Model Integration**: Utilizes Qwen 2.5 0.5B Instruct model with fine-tuning capabilities
-- 📊 **Data Pipeline**: Complete data processing workflow from raw text to training-ready datasets
-- 🔄 **Fine-tuning**: Support for custom fine-tuning on summarization tasks
-- 🚀 **API Server**: Ready-to-use API server for easy integration with other applications
-- 📈 **Evaluation**: Comprehensive evaluation metrics for summarization quality
-- 🔍 **Exploratory Data Analysis**: Jupyter notebooks for dataset exploration and visualization
+### **AI-Powered Intelligence**
+- **Qwen2.5-0.5B Model**: Fine-tuned transformer architecture optimized for summarization
+- **Smart Context Understanding**: Preserves key information while eliminating redundancy
+- **High Accuracy**: Trained on CNN/DailyMail dataset for reliable performance
 
-## Project Structure
+### **Developer-Friendly**
+- **FastAPI Integration**: Production-ready REST API with authentication
+- **Custom Fine-tuning**: Train on your own datasets with included scripts
+- **Comprehensive Evaluation**: Built-in metrics and analysis tools
+- **Easy Deployment**: Containerized and cloud-ready architecture
+
+### **Complete Pipeline**
+- **Data Processing**: Automated preprocessing and dataset preparation
+- **Model Training**: End-to-end training workflow with checkpointing
+- **Performance Monitoring**: Detailed evaluation and visualization tools
+
+## 📁 Project Structure
 
 ```
 TextSummarization/
-├── Data/                       # Data directories
-│   ├── annotations/            # Human annotations
-│   ├── datasets/               # Processed datasets for training/validation
-│   ├── processed/              # Processed data files
-│   └── raw/                    # Raw data sources
-├── models/                     # Model files
-│   └── cache/                  # Cached model files
-├── notebooks/                  # Jupyter notebooks
-│   └── EDA/                    # Exploratory Data Analysis
-├── scripts/                    # Utility scripts
-├── src/                        # Source code
-│   ├── data_preprocessing/     # Data preprocessing modules
-│   ├── deployment/             # Deployment utilities
-│   ├── evaluation/             # Model evaluation tools
-│   ├── inference/              # Inference utilities
-│   ├── pydantic_models/        # Data models
-│   ├── tasks/                  # Task definitions
-│   └── utils/                  # Utility functions
-├── requirements.txt            # Project dependencies
-├── server.py                   # API server implementation
-└── finetune.md                 # Fine-tuning documentation
+├── Data/                    # Dataset management
+│   ├── annotations/           # Human-annotated data
+│   ├── datasets/              # Training & validation sets
+│   └── processed/             # Clean, processed data
+├── models/                  # Model storage
+│   └── cache/                 # Cached model files
+├── notebooks/               # Jupyter notebooks
+│   └── EDA/                   # Exploratory Data Analysis
+├── scripts/                 # Automation scripts
+│   ├── clone_llama_factory.sh # Clone LLaMA Factory
+│   ├── download_datasets.sh   # Download datasets
+│   ├── train.sh               # Training script
+│   └── write_config.sh        # Configuration writer
+├── src/                     # Core source code
+│   ├── data_preprocessing/    # Data cleaning & preparation
+│   ├── evaluation/            # Model performance metrics
+│   ├── inference/             # Text summarization logic
+│   ├── pydantic_models/       # Data validation models
+│   ├── tasks/                 # Task definitions
+│   └── utils/                 # Helper functions
+├── server.py               # FastAPI application
+├── requirements.txt        # Project dependencies
+└── finetune.md             # Fine-tuning documentation
 ```
 
 ## Installation
@@ -76,66 +91,39 @@ TextSummarization/
    pip install -r requirements.txt
    ```
 
-4. **Download datasets**:
-   ```bash
-   bash scripts/download_datasets.sh
-   ```
+## 📚 API Documentation
 
-## Usage
+The Text Summarization service exposes a REST API that you can use to Summarize the text content programmatically.
 
-### 1. Running the API Server
+### API Endpoint
 
-```bash
-python server.py
+**URL:** `https://8000-dep-01jyhhr1e9bycjzqzt1xmt69cr-d.cloudspaces.litng.ai/predict`  
+**Method:** `POST`  
+**Authentication:** API Key (Bearer Token Required)
+
+### Request Headers
 ```
-
-The API will be available at `http://localhost:8000`.
-
-### 2. Using the API
-
-The API provides a simple endpoint for text summarization. Authentication is required using an API key.
-
-#### Authentication
-
-All API requests require a Bearer token for authentication:
-
-```
+Content-Type: application/json
 Authorization: Bearer 58badad8-affe-42a7-8209-af742c2f5f97
 ```
 
-####  API Endpoints
-
-##### POST `/predict`
-
-Summarizes the provided text.
-
-**URL**: `https://8000-dep-01jyhhr1e9bycjzqzt1xmt69cr-d.cloudspaces.litng.ai/predict`
-
-**Method**: `POST`
-
-**Headers**:
-- `Content-Type: application/json`
-- `Authorization: Bearer 58badad8-affe-42a7-8209-af742c2f5f97`
-
-**Request Body**:
+### Request Body
 ```json
 {
   "prompt": "Your text to be summarized..."
 }
 ```
 
-**Success Response**:
-- **Code**: 200
-- **Content Example**:
-  ```json
-  {
-    "output": {
-      "summarized_text": "Summarized version of the provided text."
-    }
+### Response Format
+```json
+{
+  "output": {
+    "summarized_text": "AI-generated summary of the input text."
   }
-  ```
+}
+```
 
-#### Example Usage
+### Example Usage
 
 <details>
 <summary><b>Python Example</b></summary>
@@ -177,6 +165,7 @@ fetch('https://8000-dep-01jyhhr1e9bycjzqzt1xmt69cr-d.cloudspaces.litng.ai/predic
 ```
 </details>
 
+
 <details>
 <summary><b>cURL Example</b></summary>
 
@@ -192,31 +181,47 @@ curl --request POST \
 ```
 </details>
 
-#### Example Response
 
+
+### Example Response
 ```json
 {
   "output": {
-    "summarized_text": "The internet has transformed many aspects of our lives, making communication faster and more accessible.\nHowever, it also poses challenges such as data privacy and the spread of misinformation.\nAs technology advances, it is important for us to adapt and address these issues.\nPydantic is a Python library used in web development that helps simplify form validation and error handling.\""
+    "summarized_text": "The internet has transformed communication and business through instant messaging, video conferencing, and online shopping, but raises concerns about data privacy and misinformation."
   }
 }
 ```
+### Error Handling
 
-### 3. Fine-tuning the Model
+The API returns standard HTTP status codes:
 
-To fine-tune the model on your custom dataset:
+- `200 OK`: Request successful
+- `400 Bad Request`: Invalid input
+- `401 Unauthorized`: Missing or invalid API key
+- `500 Internal Server Error`: Server-side error
 
-```bash
-bash scripts/train.sh
-```
+## Usage
 
-Make sure to configure your dataset in the appropriate format as described in `finetune.md`.
+1. **Start the API server:**
+   ```bash
+   python server.py
+   ```
 
-### 4. Evaluating Model Performance
+2. **The summarizing service will be available at:**
+   ```
+   http://localhost:8000
+   ```
 
-```bash
-python -m src.evaluation.evaluate_finetuned
-```
+3. **Send a POST request with your text:**
+   ```bash
+   curl -X POST "http://localhost:8000/predict" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Bearer 58badad8-affe-42a7-8209-af742c2f5f97" \
+        -d '{"prompt": "Your text to summarize here..."}'
+   ```
+
+
+
 
 ## Contributing
 
